@@ -41,7 +41,7 @@ VALIDATE $? "Enabling MYSQL Server"
 systemctl start mysqld &>>$LOG_FILE_NAME
 VALIDATE $? "Starting MYSQL Server"
 
-mysql_secure_installation --set-root-pass ExpenseApp@1 -e 'show databases;'
+mysql -h mysql.nirmala02.site -u root -pExpenseApp@1 -e 'show databases;' &>>$LOG_FILE_NAME
 if [ $? -ne 0 ]
 then
     echo "MYSQL Root Password not setup" &>>$LOG_FILE_NAME
