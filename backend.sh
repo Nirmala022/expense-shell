@@ -67,7 +67,7 @@ VALIDATE $? "Installing MySql Clint"
 mysql -h mysql.nirmala02.site -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$LOG_FILE_NAME
 VALIDATE $? "Settinting up the transactions schema and tables"
 
-systemctl daempn-reload &>>$LOG_FILE_NAME
+systemctl daemon-reload &>>$LOG_FILE_NAME
 VALIDATE $? "Daemon Reload"
 
 systemctl enable backend &>>$LOG_FILE_NAME
